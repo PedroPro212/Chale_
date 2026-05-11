@@ -1,0 +1,319 @@
+# galeria.html
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria • Chalé Refúgio da Lua</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0b0f19;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .hero-gallery {
+            width: 100%;
+            min-height: 45vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            text-align: center;
+            padding: 40px 20px;
+
+            background:
+                linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0.5),
+                    rgba(11, 15, 25, 1)),
+                url('imgs/8.jpeg');
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-gallery h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .hero-gallery p {
+            max-width: 700px;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .gallery-section {
+            padding: 80px 0;
+        }
+
+        .gallery-grid {
+            width: 100%;
+            max-width: 1450px;
+            margin: auto;
+            padding: 0 30px;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 280px;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 28px;
+            cursor: pointer;
+
+            background: #111;
+
+            transition:
+                transform .4s ease,
+                box-shadow .4s ease;
+        }
+
+        .gallery-item.large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            transition:
+                transform .8s ease,
+                filter .4s ease;
+        }
+
+        .gallery-item::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(to top,
+                    rgba(0, 0, 0, .75),
+                    rgba(0, 0, 0, .05));
+
+            opacity: 0;
+            transition: opacity .4s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+            filter: brightness(1.05);
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            left: 24px;
+            bottom: 24px;
+            z-index: 2;
+
+            opacity: 0;
+            transform: translateY(20px);
+
+            transition:
+                opacity .4s ease,
+                transform .4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .gallery-overlay p {
+            color: rgba(255, 255, 255, .75);
+            font-size: .95rem;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            z-index: 999;
+
+            padding: 14px 22px;
+            border-radius: 999px;
+            border: 1px solid rgba(255,255,255,.15);
+
+            background: rgba(255,255,255,.08);
+            backdrop-filter: blur(12px);
+
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+
+            transition: .3s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(255,255,255,.15);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 1000px) {
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
+            .hero-gallery h1 {
+                font-size: 2.6rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 260px;
+                padding: 0 20px;
+            }
+
+            .gallery-item.large {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="index.html" class="back-button">← Voltar</a>
+
+    <section class="hero-gallery">
+        <h1>Galeria</h1>
+
+        <p>
+            Explore cada detalhe do Chalé Refúgio da Lua e descubra um ambiente exclusivo,
+            tecnológico e cercado pela natureza.
+        </p>
+    </section>
+
+    <section class="gallery-section">
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item large">
+                <img src="imgs/8.jpeg">
+
+                <div class="gallery-overlay">
+                    <h3>Vista Panorâmica</h3>
+                    <p>Um nascer do sol inesquecível.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="imgs/1.jpeg">
+
+                <div class="gallery-overlay">
+                    <h3>Suíte Premium</h3>
+                    <p>Conforto e sofisticação.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="imgs/2.jpeg">
+
+                <div class="gallery-overlay">
+                    <h3>Jacuzzi Aquecida</h3>
+                    <p>Relaxe com uma vista incrível.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="imgs/3.jpeg">
+
+                <div class="gallery-overlay">
+                    <h3>Natureza Exclusiva</h3>
+                    <p>Conexão total com o ambiente.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item large">
+                <img src="imgs/11.jpeg">
+
+                <div class="gallery-overlay">
+                    <h3>Experiência Inteligente</h3>
+                    <p>Tecnologia integrada em todos os detalhes.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="imgs/6.jpeg">
+
+                <div class="gallery-overlay">
+                    <h3>Lareira Moderna</h3>
+                    <p>Perfeita para noites aconchegantes.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="imgs/7.jpeg">
+
+                <div class="gallery-overlay">
+                    <h3>Ambiente Exclusivo</h3>
+                    <p>Design sofisticado e acolhedor.</p>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="imgs/10.jpeg">
+
+                <div class="gallery-overlay">
+                    <h3>Refúgio da Lua</h3>
+                    <p>Uma experiência memorável.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>
