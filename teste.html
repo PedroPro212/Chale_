@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CasaIntelli • Links</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+
+            min-height: 100vh;
+            overflow-x: hidden;
+
+            color: white;
+
+            background:
+                linear-gradient(to bottom,
+                    rgba(0, 0, 0, 0.65),
+                    rgba(0, 0, 0, 0.85)),
+                url('imgs/chalenoite.jpeg');
+
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(18px);
+
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 32px;
+
+            padding: 40px 28px;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,.35);
+
+            animation: fade .8s ease;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .profile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+
+            border: 4px solid rgba(255,255,255,.15);
+
+            margin-bottom: 18px;
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,.35);
+        }
+
+        .profile h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .profile p {
+            color: rgba(255,255,255,.75);
+            line-height: 1.7;
+            font-size: .97rem;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .link-button {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+
+            padding: 18px 22px;
+
+            border-radius: 20px;
+            text-decoration: none;
+
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.10);
+
+            transition:
+                transform .3s ease,
+                background .3s ease,
+                border .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .link-button:hover {
+            transform: translateY(-4px) scale(1.01);
+
+            background: rgba(255,255,255,.12);
+            border: 1px solid rgba(255,255,255,.18);
+
+            box-shadow:
+                0 10px 30px rgba(0,0,0,.25);
+        }
+
+        .link-icon {
+            font-size: 1.2rem;
+        }
+
+        .footer {
+            margin-top: 35px;
+            text-align: center;
+
+            color: rgba(255,255,255,.55);
+            font-size: .85rem;
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                padding: 35px 22px;
+                border-radius: 26px;
+            }
+
+            .profile h1 {
+                font-size: 1.8rem;
+            }
+
+            .link-button {
+                padding: 16px 18px;
+                font-size: .95rem;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="profile">
+            <img src="imgs/logo.jpg" alt="Perfil">
+
+            <h1>Chalé Refúgio da Lua</h1>
+
+            <p>
+                O seu lugar de paz 🏡✨<br>
+                Cada detalhe foi pensado em você
+            </p>
+        </div>
+
+        <div class="links">
+
+            <a class="link-button" href="https://api.whatsapp.com/send/?phone=553584140888&text&type=phone_number&app_absent=0&utm_source=ig" target="_blank">
+                <span class="link-icon">📱</span>
+                WhatsApp
+            </a>
+
+            <a class="link-button" href="https://www.instagram.com/chalerefugiodalua_/" target="_blank">
+                <span class="link-icon">📸</span>
+                Instagram
+            </a>
+
+            <a class="link-button" href="https://pedropro212.github.io/Chale_/" target="_blank">
+                <span class="link-icon">🌐</span>
+                Nosso Site
+            </a>
+
+        </div>
+
+        <div class="footer">
+            © 2026 Chalé Refúgio da Lua
+        </div>
+
+    </div>
+
+</body>
+
+</html>
