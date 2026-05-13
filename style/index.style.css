@@ -501,17 +501,147 @@
                 background .3s ease;
         }
 
-        .seo-content p:hover {
-            transform: translateY(-4px);
+        .final-experience {
+            position: relative;
+            width: 100%;
+            min-height: 95vh;
 
-            background: rgba(255, 255, 255, 0.05);
+            overflow: hidden;
 
-            border-color: rgba(255, 255, 255, 0.12);
+            display: flex;
+            align-items: center;
+
+            padding: 6rem 8%;
         }
 
-        .seo-content strong {
+        .final-experience img {
+            position: absolute;
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .final-overlay {
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(to right,
+                    rgba(0, 0, 0, 0.82) 15%,
+                    rgba(0, 0, 0, 0.45) 45%,
+                    rgba(0, 0, 0, 0.7) 100%);
+        }
+
+        .final-container {
+            position: relative;
+            z-index: 2;
+
+            width: 100%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 4rem;
+        }
+
+        .final-left {
+            max-width: 650px;
+        }
+
+        .final-badge {
+            display: inline-flex;
+
+            padding: .8rem 1.3rem;
+
+            border-radius: 999px;
+
+            background: rgba(255, 255, 255, 0.08);
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            backdrop-filter: blur(12px);
+
+            color: rgba(255, 255, 255, 0.92);
+
+            font-size: .9rem;
+
+            margin-bottom: 2rem;
+        }
+
+        .final-left h2 {
+            font-size: clamp(3.5rem, 8vw, 6.5rem);
+
+            line-height: .95;
+
             color: #fff;
-            font-weight: 700;
+
+            font-weight: 800;
+
+            margin-bottom: 2rem;
+        }
+
+        .final-left p {
+            font-size: 1.2rem;
+
+            line-height: 1.8;
+
+            color: rgba(255, 255, 255, 0.82);
+
+            max-width: 550px;
+
+            margin-bottom: 3rem;
+        }
+
+        .final-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .final-right {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .info-card {
+            width: 240px;
+
+            padding: 2rem;
+
+            border-radius: 28px;
+
+            background: rgba(255, 255, 255, 0.08);
+
+            border: 1px solid rgba(255, 255, 255, 0.12);
+
+            backdrop-filter: blur(18px);
+
+            transition:
+                transform .3s ease,
+                background .3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateX(-6px);
+
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .info-card h3 {
+            font-size: 2rem;
+            color: #fff;
+
+            margin-bottom: .5rem;
+        }
+
+        .info-card span {
+            color: rgba(255, 255, 255, 0.75);
+
+            line-height: 1.5;
         }
 
 
@@ -612,6 +742,26 @@
             .gallery-item.large {
                 height: 420px;
             }
+        }
+
+
+        @media (max-width: 980px) {
+
+            .final-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .final-right {
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .info-card {
+                width: calc(50% - .5rem);
+            }
+
         }
 
         @media (max-width: 900px) {
@@ -806,6 +956,23 @@
 
             .seo-text .section-title {
                 margin-bottom: 2.5rem;
+            }
+
+            .final-experience {
+                min-height: auto;
+                padding: 5rem 6%;
+            }
+
+            .final-left h2 {
+                font-size: 3.2rem;
+            }
+
+            .final-left p {
+                font-size: 1rem;
+            }
+
+            .info-card {
+                width: 100%;
             }
         }
 
