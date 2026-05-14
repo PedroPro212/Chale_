@@ -53,6 +53,11 @@ phoneInput.addEventListener('input', (e) => {
 });
 
 
+function formatDate(date) {
+    const [year, month, day] = date.split('-');
+    return `${day}/${month}/${year}`;
+}
+
 const form = document.getElementById('reservationForm');
 
 form.addEventListener('submit', (e) => {
@@ -60,8 +65,15 @@ form.addEventListener('submit', (e) => {
 
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
-    const checkin = document.getElementById('checkin').value;
-    const checkout = document.getElementById('checkout').value;
+
+    const checkin = formatDate(
+        document.getElementById('checkin').value
+    );
+
+    const checkout = formatDate(
+        document.getElementById('checkout').value
+    );
+
     const message = document.getElementById('message').value;
 
     const whatsappNumber = '553584140888';
