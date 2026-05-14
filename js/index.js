@@ -66,13 +66,17 @@ form.addEventListener('submit', (e) => {
 
     const whatsappNumber = '553584140888';
 
-    const text =
-        `🏡 *Desejo realizar uma Reserva - Chalé Refúgio da Lua*%0A%0A` +
-        `👤 Nome: ${name}%0A` +
-        `📱 WhatsApp: ${phone}%0A` +
-        `📅 Check-in: ${checkin}%0A` +
-        `📅 Check-out: ${checkout}%0A%0A` +
-        `📝 Observações:%0A${message}`;
+    const text = encodeURIComponent(
+        `🏡 *Desejo realizar uma Reserva - Chalé Refúgio da Lua*
+
+        👤 Nome: ${name}
+        📱 WhatsApp: ${phone}
+        📅 Check-in: ${checkin}
+        📅 Check-out: ${checkout}
+
+        📝 Observações:
+        ${message}`
+    );
 
     window.open(
         `https://wa.me/${whatsappNumber}?text=${text}`,
