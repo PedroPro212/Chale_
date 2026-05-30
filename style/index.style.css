@@ -302,22 +302,121 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
         }
 
+        .breakfast {
+            background: transparent;
+        }
+
+        .breakfast-container {
+            max-width: 1400px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 450px 1fr;
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .breakfast-image {
+            position: relative;
+        }
+
+        .breakfast-image::before {
+            content: '';
+            position: absolute;
+            inset: -20px;
+
+            background: rgba(246, 198, 103, 0.15);
+
+            filter: blur(60px);
+
+            border-radius: 40px;
+        }
+
+        .breakfast-image img {
+            position: relative;
+
+            width: 100%;
+            height: 700px;
+
+            object-fit: cover;
+
+            border-radius: 40px;
+
+            border: 1px solid rgba(255,255,255,.08);
+
+            box-shadow: 0 25px 60px rgba(0,0,0,.35);
+        }
+
+        .breakfast-content h2 {
+            font-size: clamp(3rem, 5vw, 5rem);
+
+            line-height: 1.05;
+
+            margin: 25px 0;
+
+            font-weight: 900;
+        }
+
+        .breakfast-content p {
+            font-size: 1.1rem;
+
+            line-height: 1.9;
+
+            color: rgba(255,255,255,.75);
+
+            max-width: 700px;
+        }
+
+        .breakfast-features {
+            margin-top: 40px;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, minmax(200px, 1fr));
+
+            gap: 18px;
+        }
+
+        .breakfast-features div {
+            padding: 18px 22px;
+
+            border-radius: 18px;
+
+            background: rgba(255,255,255,.04);
+
+            border: 1px solid rgba(255,255,255,.08);
+
+            font-weight: 500;
+        }
+
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
+        }
+
+        .gallery-banner {
+            grid-column: 1 / -1;
+            height: 500px;
         }
 
         .gallery-item {
             overflow: hidden;
             border-radius: 28px;
-            height: 260px;
+            height: 500px;
+            position: relative;
         }
 
-        .gallery-item.large {
-            grid-column: span 2;
-            grid-row: span 2;
-            height: 540px;
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.8s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
         }
 
         .gallery-item img {
@@ -879,17 +978,33 @@
                 border-radius: 28px;
             }
 
-            .gallery-grid {
+            .breakfast-container {
                 grid-template-columns: 1fr;
-                gap: 16px;
+                gap: 40px;
             }
 
-            .gallery-item,
-            .gallery-item.large {
-                grid-column: span 1;
-                grid-row: span 1;
-                height: 240px;
-                border-radius: 22px;
+            .breakfast-image img {
+                height: 500px;
+            }
+
+            .breakfast-content h2 {
+                font-size: 2.5rem;
+            }
+
+            .breakfast-features {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-banner {
+                height: 260px;
+            }
+
+            .gallery-item {
+                height: 400px;
             }
 
             .reservation-form {
@@ -1009,9 +1124,12 @@
                 height: 340px;
             }
 
-            .gallery-item,
-            .gallery-item.large {
-                height: 200px;
+            .gallery-banner {
+                height: 220px;
+            }
+
+            .gallery-item {
+                height: 320px;
             }
 
             .reservation-form {
