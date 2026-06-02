@@ -44,6 +44,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
+    <!--FullCalendar-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.17/index.global.min.js"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="style/index.style.css">
 </head>
@@ -71,8 +75,25 @@
             </p>
 
             <div class="buttons">
-                <a href="#reserva"><button class="btn btn-primary">Reservar Agora</button></a>
-                <a href="#galeria"><button class="btn btn-secondary">Ver Galeria</button></a>
+
+                <a href="#reserva">
+                    <button class="btn btn-primary">
+                        Reservar Direto
+                    </button>
+                </a>
+
+                <a href="https://www.airbnb.com.br/h/chalerefugiodalua" target="_blank">
+                    <button class="btn airbnb-hero">
+                        Airbnb
+                    </button>
+                </a>
+
+                <a href="#galeria">
+                    <button class="btn btn-secondary">
+                        Ver Galeria
+                    </button>
+                </a>
+
             </div>
         </div>
 
@@ -160,41 +181,41 @@
 
         <section class="breakfast hidden">
 
-        <div class="breakfast-container">
+            <div class="breakfast-container">
 
-            <div class="breakfast-image">
-                <img src="imgs/cafe.jpeg" alt="Café da manhã incluso">
-            </div>
-
-            <div class="breakfast-content">
-
-                <div class="tag">
-                    Café da Manhã Incluso
+                <div class="breakfast-image">
+                    <img src="imgs/cafe.jpeg" alt="Café da manhã incluso">
                 </div>
 
-                <h2>
-                    Comece o dia com uma experiência especial.
-                </h2>
+                <div class="breakfast-content">
 
-                <p>
-                    Durante sua estadia, desfrute de um delicioso café da manhã preparado
-                    para tornar suas manhãs ainda mais agradáveis. Saboreie cada momento
-                    enquanto aprecia a tranquilidade da natureza e a vista encantadora do
-                    Chalé Refúgio da Lua.
-                </p>
+                    <div class="tag">
+                        Café da Manhã Incluso
+                    </div>
 
-                <div class="breakfast-features">
-                    <div>☕ Café fresquinho</div>
-                    <div>🥐 Pães e quitandas</div>
-                    <div>🍓 Frutas selecionadas</div>
-                    <div>🌄 Vista privilegiada</div>
+                    <h2>
+                        Comece o dia com uma experiência especial.
+                    </h2>
+
+                    <p>
+                        Durante sua estadia, desfrute de um delicioso café da manhã preparado
+                        para tornar suas manhãs ainda mais agradáveis. Saboreie cada momento
+                        enquanto aprecia a tranquilidade da natureza e a vista encantadora do
+                        Chalé Refúgio da Lua.
+                    </p>
+
+                    <div class="breakfast-features">
+                        <div>☕ Café fresquinho</div>
+                        <div>🥐 Pães e quitandas</div>
+                        <div>🍓 Frutas selecionadas</div>
+                        <div>🌄 Vista privilegiada</div>
+                    </div>
+
                 </div>
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
         <section class="hidden" id="galeria">
             <div class="section-title">
@@ -257,16 +278,28 @@
                             required readonly onfocus="this.removeAttribute('readonly');">
                     </div>
 
-                    <div class="form-grid">
+                    <div class="calendar-wrapper">
 
-                        <div class="form-group">
-                            <label>Check-in</label>
-                            <input type="date" id="checkin" required>
-                        </div>
+                        <h3>Selecione sua estadia</h3>
 
-                        <div class="form-group">
-                            <label>Check-out</label>
-                            <input type="date" id="checkout" required>
+                        <div id="calendar"></div>
+
+                        <div class="selected-dates">
+
+                            <div class="selected-date-card">
+                                <small>Check-in</small>
+                                <span id="selectedCheckin">
+                                    Não selecionado
+                                </span>
+                            </div>
+
+                            <div class="selected-date-card">
+                                <small>Check-out</small>
+                                <span id="selectedCheckout">
+                                    Não selecionado
+                                </span>
+                            </div>
+
                         </div>
 
                     </div>
@@ -282,6 +315,10 @@
                     <button type="submit" class="btn btn-primary form-button">
                         Reservar pelo WhatsApp
                     </button>
+
+                    <a href="https://www.airbnb.com.br/h/chalerefugiodalua" target="_blank" class="airbnb-btn">
+                        Reservar pelo Airbnb
+                    </a>
 
                 </form>
             </div>
