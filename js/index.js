@@ -59,6 +59,39 @@ function formatDate(dateString) {
     return `${day}/${month}/${year}`;
 }
 
+// Galeria
+const openGallery =
+    document.getElementById('openGallery');
+
+const galleryExtra =
+    document.getElementById('galleryExtra');
+
+openGallery.addEventListener('click', () => {
+
+    galleryExtra.classList.toggle('show');
+
+    const span =
+        openGallery.querySelector('span');
+
+    const small =
+        openGallery.querySelector('small');
+
+    if (galleryExtra.classList.contains('show')) {
+
+        span.textContent = '−';
+        small.textContent = 'Ocultar fotos';
+
+    } else {
+
+        span.textContent = '+4';
+        small.textContent = 'Ver mais fotos';
+
+    }
+
+});
+
+// -------
+
 const form = document.getElementById('reservationForm');
 
 form.addEventListener('submit', (e) => {

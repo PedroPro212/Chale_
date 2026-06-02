@@ -461,6 +461,53 @@
             transform: scale(1.1);
         }
 
+        .gallery-more {
+            cursor: pointer;
+        }
+
+        .gallery-more-overlay {
+            position: absolute;
+            inset: 0;
+
+            background: rgba(0, 0, 0, .55);
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            z-index: 2;
+
+            transition: .3s;
+        }
+
+        .gallery-more:hover .gallery-more-overlay {
+            background: rgba(0, 0, 0, .4);
+        }
+
+        .gallery-more-overlay span {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            color: white;
+        }
+
+        .gallery-more-overlay small {
+            color: rgba(255, 255, 255, .85);
+            margin-top: 8px;
+            font-size: .95rem;
+        }
+
+        .gallery-extra {
+            display: none;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .gallery-extra.show {
+            display: grid;
+        }
+
         .cta {
             position: relative;
             overflow: hidden;
@@ -1130,6 +1177,18 @@
                 height: 400px;
             }
 
+            .gallery-modal-content {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-modal-content img {
+                height: 420px;
+            }
+
+            .gallery-extra {
+                grid-template-columns: 1fr;
+            }
+
             .reservation-form {
                 padding: 28px 20px;
                 border-radius: 26px;
@@ -1282,6 +1341,20 @@
 
             .gallery-item {
                 height: 320px;
+            }
+
+            .gallery-modal-content {
+                padding: 80px 15px;
+            }
+
+            .gallery-modal-content img {
+                height: 280px;
+                border-radius: 18px;
+            }
+
+            .gallery-close {
+                top: 15px;
+                right: 15px;
             }
 
             .reservation-form {
