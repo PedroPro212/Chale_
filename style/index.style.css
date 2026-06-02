@@ -142,21 +142,28 @@
             background: rgba(255, 255, 255, 0.16);
         }
 
+        .form-button,
         .airbnb-btn {
-            display: block;
             width: 100%;
-            margin-top: 12px;
+            margin-top: 10px;
+
             padding: 18px;
             border-radius: 18px;
-            text-align: center;
-            text-decoration: none;
+
+            font-size: 1.1rem;
             font-weight: 700;
-            font-size: 1rem;
 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 60px;
+        }
+
+        .airbnb-btn {
             background: #FF5A5F;
-            color: white;
-
-            transition: .3s;
+            color: #fff;
+            text-decoration: none;
         }
 
         .airbnb-btn:hover {
@@ -692,9 +699,8 @@
         }
 
         .form-button {
-            width: 100%;
-            margin-top: 10px;
-            font-size: 1.1rem;
+        background: #f6c667;
+        color: #000;
         }
 
         select option {
@@ -1120,14 +1126,16 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 14px;
-                width: 100%;
             }
 
             .btn {
-                width: 100%;
-                max-width: 340px;
                 padding: 16px 24px;
                 font-size: 1rem;
+            }
+
+            .buttons .btn {
+                width: 100%;
+                max-width: 340px;
             }
 
             .scroll {
