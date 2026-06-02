@@ -564,3 +564,45 @@ document.addEventListener(
         calendar.render();
     }
 );
+
+const imageModal =
+    document.getElementById('imageModal');
+
+const modalImage =
+    document.getElementById('modalImage');
+
+const closeImageModal =
+    document.getElementById('closeImageModal');
+
+document
+    .querySelectorAll('.gallery-item img')
+    .forEach(img => {
+
+        img.addEventListener('click', () => {
+
+            modalImage.src = img.src;
+
+            imageModal.classList.add('active');
+
+            document.body.style.overflow = 'hidden';
+        });
+
+    });
+
+closeImageModal.addEventListener('click', () => {
+
+    imageModal.classList.remove('active');
+
+    document.body.style.overflow = '';
+});
+
+imageModal.addEventListener('click', (e) => {
+
+    if (e.target === imageModal) {
+
+        imageModal.classList.remove('active');
+
+        document.body.style.overflow = '';
+    }
+
+});
