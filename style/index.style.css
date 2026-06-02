@@ -580,6 +580,10 @@
             background: rgba(246, 198, 103, .08) !important;
         }
 
+        .fc-toolbar-title {
+            text-transform: capitalize;
+        }
+
         @media (max-width: 768px) {
 
             .selected-dates {

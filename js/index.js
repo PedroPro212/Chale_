@@ -409,11 +409,21 @@ document.addEventListener(
                             const nights =
                                 Math.ceil(
                                     (
-                                        new Date(selectedCheckout) -
+                                        new Date(clickedDate) -
                                         new Date(selectedCheckin)
                                     ) / 86400000
                                 );
 
+                            if (nights < 2) {
+
+                                alert(
+                                    'A estadia mínima é de 2 noites.'
+                                );
+
+                                return;
+                            }
+
+                            selectedCheckout = clickedDate;
                             document.getElementById(
                                 'selectedCheckin'
                             ).textContent =
