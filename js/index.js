@@ -162,7 +162,7 @@ document.addEventListener(
             'https://www.airbnb.com.br/calendar/ical/1683650729866504217.ics?t=f53e1dfdd31640d6a6fa40cfac4a01f1';
 
         const PROXY =
-            'https://corsproxy.io/?';
+            'https://api.allorigins.win/raw?url=';
 
         async function loadAirbnbEvents() {
 
