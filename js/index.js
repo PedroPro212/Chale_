@@ -203,19 +203,16 @@ document.addEventListener(
                     event.end
                 );
 
-            while (
-                current < end
-            ) {
+                while (current <= end) {
 
-                occupiedDates.push(
-                    current
-                        .toISOString()
-                        .split('T')[0]
-                );
+                    occupiedDates.push(
+                        current.toISOString().split('T')[0]
+                    );
 
-                current.setDate(
-                    current.getDate() + 1
-                );
+                    current.setDate(
+                        current.getDate() + 1
+                    );
+                }
             }
 
         });
