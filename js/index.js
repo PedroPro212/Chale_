@@ -1,7 +1,7 @@
 const unavailableRanges = [
     {
         start: '2026-06-04',
-        end: '2026-06-06'
+        end: '2026-06-07'
     },
     {
         start: '2026-06-19',
