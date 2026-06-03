@@ -193,24 +193,14 @@ document.addEventListener(
 
         events.forEach(event => {
 
-            let current =
-                new Date(
-                    event.start
-                );
+            let current = new Date(event.start);
 
-            const end =
-                new Date(
-                    event.end
-                );
+            const end = new Date(event.end);
 
-            while (
-                current < end
-            ) {
+            while (current <= end) {
 
                 occupiedDates.push(
-                    current
-                        .toISOString()
-                        .split('T')[0]
+                    current.toISOString().split('T')[0]
                 );
 
                 current.setDate(
