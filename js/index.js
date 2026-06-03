@@ -203,10 +203,14 @@ document.addEventListener(
                     event.end
                 );
 
-            while (current <= end) {
+            while (
+                current < end
+            ) {
 
                 occupiedDates.push(
-                    current.toISOString().split('T')[0]
+                    current
+                        .toISOString()
+                        .split('T')[0]
                 );
 
                 current.setDate(
