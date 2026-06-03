@@ -178,19 +178,16 @@ document.addEventListener(
         function loadUnavailableEvents() {
 
             return unavailableRanges.map(range => ({
+                title: 'Reservado',
                 start: range.start,
                 end: range.end,
-                display: 'background',
-                backgroundColor: '#ff6b6b'
+                display: 'block'
             }));
 
         }
 
         const events =
             loadUnavailableEvents();
-        
-        console.log(events);
-        console.log(occupiedDates); 
 
         const occupiedDates = [];
 
