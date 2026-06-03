@@ -1,7 +1,7 @@
 const unavailableRanges = [
     {
         start: '2026-06-04',
-        end: '2026-06-07'
+        end: '2026-06-06'
     },
     {
         start: '2026-06-19',
@@ -178,16 +178,19 @@ document.addEventListener(
         function loadUnavailableEvents() {
 
             return unavailableRanges.map(range => ({
-                title: 'Reservado',
                 start: range.start,
                 end: range.end,
-                display: 'block'
+                display: 'background',
+                backgroundColor: '#ff6b6b'
             }));
 
         }
 
         const events =
             loadUnavailableEvents();
+        
+        console.log(events);
+        console.log(occupiedDates); 
 
         const occupiedDates = [];
 
