@@ -177,6 +177,8 @@ document.addEventListener(
             const ics =
                 await response.text();
 
+            console.log(ics);
+
             const events = [];
 
             const blocks =
