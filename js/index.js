@@ -1,3 +1,14 @@
+const unavailableRanges = [
+    {
+        start: '2026-06-04',
+        end: '2026-06-06'
+    },
+    {
+        start: '2026-06-19',
+        end: '2026-06-21'
+    }
+];
+
 const hiddenElements = document.querySelectorAll('.hidden');
 
 const observer = new IntersectionObserver((entries) => {
@@ -164,73 +175,19 @@ document.addEventListener(
         const PROXY =
             'https://api.allorigins.win/raw?url=';
 
-        async function loadAirbnbEvents() {
+        function loadUnavailableEvents() {
 
-            const response =
-                await fetch(
-                    PROXY +
-                    encodeURIComponent(
-                        AIRBNB_ICS
-                    )
-                );
+            return unavailableRanges.map(range => ({
+                title: 'Reservado',
+                start: range.start,
+                end: range.end,
+                display: 'block'
+            }));
 
-            const ics =
-                await response.text();
-
-            console.log(ics);
-
-            const events = [];
-
-            const blocks =
-                ics.split(
-                    'BEGIN:VEVENT'
-                );
-
-            blocks.forEach(block => {
-
-                const startMatch =
-                    block.match(
-                        /DTSTART;VALUE=DATE:(\d{8})/
-                    );
-
-                const endMatch =
-                    block.match(
-                        /DTEND;VALUE=DATE:(\d{8})/
-                    );
-
-                if (
-                    !startMatch ||
-                    !endMatch
-                ) return;
-
-                const start =
-                    startMatch[1]
-                        .replace(
-                            /(\d{4})(\d{2})(\d{2})/,
-                            '$1-$2-$3'
-                        );
-
-                const end =
-                    endMatch[1]
-                        .replace(
-                            /(\d{4})(\d{2})(\d{2})/,
-                            '$1-$2-$3'
-                        );
-
-                events.push({
-                    title: 'Reservado',
-                    start,
-                    end,
-                    display: 'block'
-                });
-
-            });
-
-            return events;
         }
 
         const events =
-            await loadAirbnbEvents();
+            loadUnavailableEvents();
 
         const occupiedDates = [];
 
