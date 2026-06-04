@@ -1,21 +1,4 @@
-const unavailableRanges = [
-    {
-        start: '2026-06-04',
-        end: '2026-06-06'
-    },
-    {
-        start: '2026-06-12',
-        end: '2026-06-15'
-    },
-    {
-        start: '2026-06-19',
-        end: '2026-06-21'
-    },
-    {
-        start: '2026-06-06',
-        end: '2026-06-08'
-    }
-];
+
 
 const hiddenElements = document.querySelectorAll('.hidden');
 
@@ -171,6 +154,22 @@ let selectedCheckout = null;
 document.addEventListener(
     'DOMContentLoaded',
     async function () {
+
+        let unavailableRanges = [];
+
+        try {
+
+            unavailableRanges =
+                await fetch(
+                    'https://chale-refugioda-da-lua-airbnb-calendar.pedrogamer212004.workers.dev'
+                )
+                .then(response => response.json());
+
+        } catch (error) {
+
+            console.error(error);
+
+        }
 
         const calendarEl =
             document.getElementById(
