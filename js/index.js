@@ -140,6 +140,23 @@ form.addEventListener('submit', (e) => {
         ${message}`
     );
 
+    // Analytics GA4
+    gtag('event', 'generate_lead', {
+        method: 'whatsapp'
+    });
+
+    // Google Ads Conversion
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18175143693/mcHjCI7i-7scEI3eytpD'
+    });
+
+    setTimeout(() => {
+        window.open(
+            `https://wa.me/${whatsappNumber}?text=${text}`,
+            '_blank'
+        );
+    }, 300);
+
     window.open(
         `https://wa.me/${whatsappNumber}?text=${text}`,
         '_blank'
